@@ -22,7 +22,7 @@ To execute a simple container with no persitent data (i.e. for testing purposes)
 
 > docker run -d -p 25565:25565 minecraft
 
-To added some data persistency:
+To add some data persistency:
 
 > docker run -d -p 25565:25565 -v /Host/Folder:/data minecraft
 
@@ -35,11 +35,12 @@ For example, if you created a server properties file and named it 'peaceful.prop
 > docker run -d -p 25565:25565 minecraft peaceful
 
 You can also mount a config folder from the host file system. To execute a new world with persistent data (in a possible production scenario):
-  
 
 > docker run -d -p 25565:25565 -v /Host/Data/Folder:/data -v /Host/Configs/Folder:/configs minecraft [config name]
 
 **N.B.** If the data folder already contains files (e.g. from a previous run), a new config will not be copied.
+
+Using this method, you could potentially store hundreds of different configurations and initiate new worlds by naming the config file you want to use.
 
 ###In conclusion...
 Any comments or improvement requests are welcome. I'm still new to Minecraft Server and this is just an attempt to make my own life easier.
